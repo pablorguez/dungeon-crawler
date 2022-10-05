@@ -6,7 +6,7 @@ export const Paths = () => {
   const { state, dispatch } = useContext(DungeonContext);
   const { paths } = state;
 
-  const handleClick = (id) => {
+  const handleClick = (id: string) => {
     dispatch({ type: 'select', payload: id });
   };
 

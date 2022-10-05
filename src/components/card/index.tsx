@@ -1,8 +1,8 @@
 import { DungeonCard } from '../../dungeons/dungeons';
 
 interface CardProps extends DungeonCard {
-  selected: boolean;
-  onClick: () => void;
+  selected?: boolean;
+  onClick?: () => void;
 }
 
 export const Card: React.FC<CardProps> = (props) => {

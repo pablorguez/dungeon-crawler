@@ -2,12 +2,8 @@ import { Dungeon, Action } from '../context/dungeon';
 
 export const dungeonReducer = (state: Dungeon, action: Action) => {
   const draw = () => {
-    console.log('action: ', action);
-    const paths = Array.from({ length: state.active?.exits || 3 }, () =>
-      state.deck!.shift()
-    );
-
-    console.log({ ...state, paths });
+    const drawNumber = state.active ? state.active.exits || 1 : 3;
+    const paths = Array.from({ length: drawNumber }, () => state.deck!.shift());
 
     return { ...state, paths };
   };

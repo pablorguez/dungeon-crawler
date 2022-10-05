@@ -1,4 +1,4 @@
-import React, { useReducer } from 'react';
+import React, { ReducerState, useReducer } from 'react';
 import { DungeonCard } from '../dungeons/dungeons';
 import { moriaMines } from '../dungeons/moria-mines';
 import { dungeonReducer } from '../dungeons/reducer';
@@ -26,10 +26,17 @@ export const DungeonContext = React.createContext<DungeonContext>({
   dispatch: () => {}
 });
 
-export const DungeonProvider = ({ children }) => {
-  const [state, dispatch] = useReducer(dungeonReducer, {
-    deck: moriaMines.stack
-  });
+interface ProviderProps {
+  children: React.ReactNode;
+}
+
+export const DungeonProvider: React.FC<ProviderProps> = ({ children }) => {
+  const [state, dispatch] = useReducer<React.Reducer<any, any>>(
+    dungeonReducer,
+    {
+      deck: moriaMines.stack
+    }
+  );
 
   return (
     <DungeonContext.Provider value={{ state, dispatch }}>
