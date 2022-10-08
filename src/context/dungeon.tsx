@@ -1,7 +1,8 @@
-import React, { ReducerState, useReducer } from 'react';
-import { DungeonCard } from '../dungeons/dungeons';
+import React, { useReducer } from 'react';
 import { moriaMines } from '../dungeons/moria-mines';
-import { dungeonReducer } from '../dungeons/reducer';
+import { Action, dungeonReducer } from '../dungeons/reducer';
+import { DungeonCard } from '../types/dungeons';
+import { shuffle } from '../utils/shuffle';
 
 export interface Dungeon {
   deck?: DungeonCard[];
@@ -9,11 +10,6 @@ export interface Dungeon {
   paths?: DungeonCard[];
   history?: DungeonCard[];
   discard?: DungeonCard[];
-}
-
-export interface Action {
-  type: 'draw' | 'select' | 'discard';
-  payload?: any;
 }
 
 export interface DungeonContext {
@@ -31,10 +27,11 @@ interface ProviderProps {
 }
 
 export const DungeonProvider: React.FC<ProviderProps> = ({ children }) => {
+  const shuffledDeck = shuffle(moriaMines.stack);
   const [state, dispatch] = useReducer<React.Reducer<any, any>>(
     dungeonReducer,
     {
-      deck: moriaMines.stack
+      deck: shuffledDeck
     }
   );
 

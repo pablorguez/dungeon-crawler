@@ -1,19 +1,41 @@
-import { DungeonCard } from '../../dungeons/dungeons';
+import { DungeonCard } from '../../types/dungeons';
 
 interface CardProps extends DungeonCard {
   selected?: boolean;
-  onClick?: () => void;
+  onClick?: React.MouseEventHandler;
 }
 
-export const Card: React.FC<CardProps> = (props) => {
-  const { selected, onClick } = props;
+const Front: React.FC<{ img: string }> = ({ img }) => {
+  const bg = `https://drive.google.com/file/d/${img}/view`;
 
   return (
-    <div className={`card${selected ? ' selected' : ''}`} onClick={onClick}>
-      <div className="inner">
-        <div className="front"></div>
-        <div className="back"></div>
-      </div>
+    <div
+      className="img"
+      style={{
+        background: `url(${bg}) no-repeat center`,
+        backgroundSize: 'cover'
+      }}
+    ></div>
+  );
+};
+
+const Back: React.FC<{ type: string; envEffect?: string }> = ({
+  type,
+  envEffect
+}) => {
+  return <div className={`back ${type} ${envEffect}`}></div>;
+};
+
+export const Card: React.FC<CardProps> = (props) => {
+  const { img, type, envEffect, selected, onClick } = props;
+
+  return (
+    <div className={`card${selected ? ' selected' : ''}`} {...{ onClick }}>
+      {selected ? (
+        <Front img={img} />
+      ) : (
+        <Back type={type} envEffect={envEffect} />
+      )}
     </div>
   );
 };

@@ -9,7 +9,6 @@
   justify-content: space-between;
   font-family: 'Oxanium', cursive;
 }
-
 .card-placement {
   border-radius: 0.5rem;
   background-color: rgba(0, 0, 0, 0.4);
@@ -60,40 +59,112 @@
   width: 100%;
   height: 100%;
   cursor: pointer;
-  perspective: 1000px;
   transition: transform 0.5s;
 
-  &.selected .inner {
-    transform: translateX(100%) rotateY(180deg);
+  & > div {
+    width: 100%;
+    height: 100%;
+    border-radius: 0.2rem;
   }
 
-  .inner {
+  .back {
     position: relative;
-    width: 100%;
+
+    &.room {
+      background: url('./assets/room-back.jpg') no-repeat center;
+      background-size: cover;
+    }
+
+    &.passage {
+      background: url('./assets/passage-back.jpg') no-repeat center;
+      background-size: cover;
+
+      &.noise::after,
+      &.light::after,
+      &.trace::after,
+      &.mist::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+      }
+
+      &.noise::after {
+        background: url('./assets/noise.png') no-repeat center;
+        background-size: 40%;
+      }
+      &.light::after {
+        background: url('./assets/light.png') no-repeat center;
+        background-size: 40%;
+      }
+      &.mist::after {
+        background: url('./assets/mist.png') no-repeat center;
+        background-size: 40%;
+      }
+      &.trace::after {
+        background: url('./assets/trace.png') no-repeat center;
+        background-size: 40%;
+      }
+    }
+  }
+}
+
+.modal {
+  position: absolute;
+  top: 5vw;
+  left: 5vw;
+  right: 5vw;
+  bottom: 5vw;
+  background-color: transparent;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+
+  .main {
     height: 100%;
-    text-align: center;
-    transition: transform 0.8s;
-    transform-style: preserve-3d;
-    transform-origin: center left;
+    width: 50%;
+    background-color: mediumpurple;
   }
 
-  .front,
-  .back {
-    position: absolute;
-    width: 100%;
+  .aside {
+    width: 40%;
     height: 100%;
-    backface-visibility: hidden;
-    border-radius: 0.3rem;
-  }
+    overflow-y: scroll;
 
-  .front {
-    background: url('./assets/card-front.jpeg') no-repeat center;
-    background-size: cover;
-    transform: rotateY(180deg);
-  }
+    .effect {
+      padding: 1rem 0;
+      cursor: pointer;
+      text-align: center;
 
-  .back {
-    background: url('./assets/card-back.jpeg') no-repeat center;
-    background-size: cover;
+      &.shortcut {
+        background-color: darkgreen;
+      }
+      &.trap {
+        background-color: darkred;
+      }
+      &.oportunity {
+        background-color: blue;
+      }
+
+      h5 {
+        margin: 0 0 0.5rem;
+        font-size: 1rem;
+      }
+
+      p {
+        margin: 0;
+      }
+    }
   }
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.6);
 }

@@ -14,16 +14,13 @@ export const Paths = () => {
     <div className="paths card-placement">
       {paths
         ? paths.map((option, i) => (
-            <div className="placeholder">
+            <div className="placeholder" key={option.id}>
               <Card
                 {...option}
-                key={i}
                 onClick={() => {
-                  console.log(option);
                   handleClick(option.id);
                 }}
               />
-              ;
             </div>
           ))
         : null}

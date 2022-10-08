@@ -17,7 +17,7 @@ export const Stack = () => {
   return (
     <div className="stack placeholder card-placement">
       <h3 className="title">Dungeon deck ({deck!.length})</h3>
-      {deck?.length ? <Card id="x" type="passage" exits={0} /> : null}
+      {deck?.length ? <Card {...deck[0]} /> : null}
     </div>
   );
 };
