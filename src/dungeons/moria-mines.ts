@@ -100,19 +100,19 @@ const stack: DungeonCard[] = [
   {
     id: 'light-1',
     type: 'passage',
-    envEffect: 'mist',
+    envEffect: 'light',
     exits: 2
   },
   {
     id: 'light-2',
     type: 'passage',
-    envEffect: 'mist',
+    envEffect: 'light',
     exits: 1
   },
   {
     id: 'light-3',
     type: 'passage',
-    envEffect: 'mist',
+    envEffect: 'light',
     exits: 2
   },
   {
