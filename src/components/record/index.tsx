@@ -4,29 +4,30 @@ import { DungeonContext } from '../../context/dungeon';
 import { DungeonCard } from '../../types/dungeons';
 import { Card } from '../card';
 
-export const History = () => {
+export const Record = () => {
   const {
-    state: { history }
+    state: { record }
   } = useContext(DungeonContext);
   const [lastCard, setLastCard] = useState<DungeonCard>();
 
   useEffect(() => {
-    history?.length && setLastCard(history.reverse().shift());
-  }, [history]);
+    console.log('~~ current record', record);
+    record?.length && setLastCard(record.reverse().shift());
+  }, [record]);
 
   return (
-    <div className="active placeholder card-placement">
+    <div className="record placeholder card-placement">
       {lastCard ? (
         <>
-          <Card data-tip data-for="history" {...lastCard!} selected />
+          <Card data-tip data-for="record" {...lastCard!} selected />
 
-          <ReactTooltip id="history" delayHide={1000} effect="solid">
-            {history!.map((item, i) => (
+          {/* <ReactTooltip id="record" delayHide={1000} effect="solid">
+            {(record || []).map((item, i) => (
               <div className="card-placement" key={item.id}>
                 <Card {...item} key={i} selected />
               </div>
             ))}
-          </ReactTooltip>
+          </ReactTooltip> */}
         </>
       ) : null}
     </div>

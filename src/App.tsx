@@ -2,7 +2,7 @@ import { useContext, useEffect } from 'react';
 import './App.scss';
 import { Active } from './components/active';
 import { Discard } from './components/discard';
-import { History } from './components/history';
+import { Record } from './components/record';
 import { Paths } from './components/paths';
 import { Stack } from './components/stack';
 import { DungeonContext } from './context/dungeon';
@@ -21,7 +21,7 @@ function App() {
       <Paths />
       <div className="stacks">
         <Discard />
-        <History />
+        <Record />
         <Stack />
       </div>
       <Active />

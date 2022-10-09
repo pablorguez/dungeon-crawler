@@ -8,7 +8,7 @@ export interface Dungeon {
   deck?: DungeonCard[];
   active?: DungeonCard;
   paths?: DungeonCard[];
-  history?: DungeonCard[];
+  record?: DungeonCard[];
   discard?: DungeonCard[];
 }
 

@@ -46,7 +46,6 @@ export const Active = () => {
     setIsOpen(!!active);
 
     if (active) {
-      console.info('Active card', active);
       const effects = [];
       const { trap, stuff, effect, oportunity } = active;
 
