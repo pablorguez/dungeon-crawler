@@ -2,7 +2,7 @@ import { Dungeon, DungeonCard } from '../types/dungeons';
 
 const stack: DungeonCard[] = [
   {
-    id: 'ruido-1',
+    id: 'noise-1',
     type: 'passage',
     envEffect: 'noise',
     exits: 1,
@@ -19,11 +19,10 @@ const stack: DungeonCard[] = [
           who: 'single'
         }
       }
-    ],
-    img: '1oAFnmOYjZGfdk_6sznIC8SEGxxMtlMaN'
+    ]
   },
   {
-    id: 'ruido-2',
+    id: 'noise-2',
     type: 'passage',
     envEffect: 'noise',
     exits: 2,
@@ -40,11 +39,10 @@ const stack: DungeonCard[] = [
           who: 'single'
         }
       }
-    ],
-    img: '1wVbm-ju9ESqAiTqsPvvVdpHAFLuw69fD'
+    ]
   },
   {
-    id: 'ruido-3',
+    id: 'noise-3',
     type: 'passage',
     envEffect: 'noise',
     exits: 1,
@@ -61,89 +59,76 @@ const stack: DungeonCard[] = [
           who: 'single'
         }
       }
-    ],
-    img: '1z9LoLHkEsb1z9CiRA0zDfTSSLESsdPyd'
+    ]
   },
   {
-    id: 'rastro-1',
+    id: 'trace-1',
     type: 'passage',
     envEffect: 'trace',
-    exits: 0,
-    img: '1TDf4e3LkEQjtxrhGCuDDvtbVhTsHfUJs'
+    exits: 0
   },
   {
-    id: 'rastro-2',
+    id: 'trace-2',
     type: 'passage',
     envEffect: 'trace',
-    exits: 2,
-    img: '1ahi7gxcoaSSQU0TKSwsXlM-NKp45kgz3'
+    exits: 2
   },
   {
-    id: 'rastro-3',
+    id: 'trace-3',
     type: 'passage',
     envEffect: 'trace',
-    exits: 0,
-    img: '1w9fwoWaw-KWky-w19gb_xScqVvgsEWFX'
+    exits: 0
   },
   {
-    id: 'niebla-1',
+    id: 'mist-1',
     type: 'passage',
     envEffect: 'mist',
-    exits: 2,
-    img: '1LczDqIvEd3m50-MY71dMlpk0ubM3q046'
+    exits: 2
   },
   {
-    id: 'niebla-2',
+    id: 'mist-2',
     type: 'passage',
     envEffect: 'mist',
-    exits: 2,
-    img: '1qVk8gT3gVmqhzcz15lFt_HVVbNsttl4p'
+    exits: 2
   },
   {
-    id: 'niebla-3',
+    id: 'mist-3',
     type: 'passage',
     envEffect: 'mist',
-    exits: 2,
-    img: '1qVk8gT3gVmqhzcz15lFt_HVVbNsttl4p'
+    exits: 2
   },
   {
-    id: 'luz-1',
+    id: 'light-1',
     type: 'passage',
     envEffect: 'mist',
-    exits: 2,
-    img: '1qVk8gT3gVmqhzcz15lFt_HVVbNsttl4p'
+    exits: 2
   },
   {
-    id: 'luz-2',
+    id: 'light-2',
     type: 'passage',
     envEffect: 'mist',
-    exits: 1,
-    img: '1yolVULXWyNdC3CA0wJ_oqvQ55l6X1ewa'
+    exits: 1
   },
   {
-    id: 'luz-3',
+    id: 'light-3',
     type: 'passage',
     envEffect: 'mist',
-    exits: 2,
-    img: '1yolVULXWyNdC3CA0wJ_oqvQ55l6X1ewa'
+    exits: 2
   },
   {
-    id: 'habitación-1',
+    id: 'room-1',
     type: 'room',
-    exits: 3,
-    img: '1nlmh2fC56curWOiTPpvR3XMw72uvZFvZ'
+    exits: 3
   },
   {
-    id: 'habitación-2',
+    id: 'room-2',
     type: 'room',
-    exits: 3,
-    img: '1yE5IzBEuzdSTGpsW5V5dggJptzHMwh0t'
+    exits: 3
   },
   {
-    id: 'habitación-3',
+    id: 'room-3',
     type: 'room',
-    exits: 4,
-    img: '1yE5IzBEuzdSTGpsW5V5dggJptzHMwh0t'
+    exits: 4
   }
 ];
 

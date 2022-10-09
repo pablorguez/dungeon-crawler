@@ -5,19 +5,9 @@ interface CardProps extends DungeonCard {
   onClick?: React.MouseEventHandler;
 }
 
-const Front: React.FC<{ img: string }> = ({ img }) => {
-  const bg = `https://drive.google.com/file/d/${img}/view`;
-
-  return (
-    <div
-      className="img"
-      style={{
-        background: `url(${bg}) no-repeat center`,
-        backgroundSize: 'cover'
-      }}
-    ></div>
-  );
-};
+const Front: React.FC<{ id: string }> = ({ id }) => (
+  <img className="img" src={`/cards/${id}.jpg`} />
+);
 
 const Back: React.FC<{ type: string; envEffect?: string }> = ({
   type,
@@ -27,12 +17,12 @@ const Back: React.FC<{ type: string; envEffect?: string }> = ({
 };
 
 export const Card: React.FC<CardProps> = (props) => {
-  const { img, type, envEffect, selected, onClick } = props;
+  const { id, type, envEffect, selected, onClick } = props;
 
   return (
-    <div className={`card${selected ? ' selected' : ''}`} {...{ onClick }}>
+    <div className="card" {...{ onClick }}>
       {selected ? (
-        <Front img={img} />
+        <Front id={id} />
       ) : (
         <Back type={type} envEffect={envEffect} />
       )}

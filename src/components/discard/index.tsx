@@ -10,7 +10,7 @@ export const Discard = () => {
   return (
     <div className="discard placeholder card-placement">
       <h3 className="title">Discard pile</h3>
-      {discard ? <Card id="x" type="passage" exits={0} img="" /> : null}
+      {discard ? <Card id="x" type="passage" exits={0} /> : null}
     </div>
   );
 };

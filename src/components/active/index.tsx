@@ -23,12 +23,22 @@ export const Active = () => {
 
   const handleClick = () => {
     const hasExits = active!.exits > 0;
+    const hasOptions = paths!.length > 0;
 
     dispatch({ type: 'next' });
 
-    if (hasExits) {
-      dispatch({ type: 'discard' });
-      dispatch({ type: 'draw' });
+    switch (true) {
+      case hasExits:
+        dispatch({ type: 'discard' });
+        dispatch({ type: 'draw' });
+        break;
+
+      case !hasExits && !hasOptions:
+        dispatch({ type: 'draw' });
+        break;
+
+      default:
+        break;
     }
   };
 

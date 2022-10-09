@@ -1,4 +1,4 @@
-import React, { useReducer } from 'react';
+import React, { useMemo, useReducer } from 'react';
 import { moriaMines } from '../dungeons/moria-mines';
 import { Action, dungeonReducer } from '../dungeons/reducer';
 import { DungeonCard } from '../types/dungeons';
@@ -27,7 +27,7 @@ interface ProviderProps {
 }
 
 export const DungeonProvider: React.FC<ProviderProps> = ({ children }) => {
-  const shuffledDeck = shuffle(moriaMines.stack);
+  const shuffledDeck = useMemo(() => shuffle(moriaMines.stack), [moriaMines]);
   const [state, dispatch] = useReducer<React.Reducer<any, any>>(
     dungeonReducer,
     {

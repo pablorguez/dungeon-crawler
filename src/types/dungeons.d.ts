@@ -51,7 +51,6 @@ export interface DungeonCard {
   type: 'passage' | 'room';
   envEffect?: 'mist' | 'trace' | 'noise' | 'light';
   exits: number;
-  img: string;
   effect?: Effect[];
   oportunity?: Oportunity[];
   trap?: Trap;
