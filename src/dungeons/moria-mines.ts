@@ -326,22 +326,22 @@ const stack: DungeonCard[] = [
     exits: 0
   },
   {
-    id: 'habitación-1',
+    id: 'room-1',
     type: 'room',
     exits: 3
   },
   {
-    id: 'habitación-2',
+    id: 'room-2',
     type: 'room',
     exits: 3
   },
   {
-    id: 'habitación-3',
+    id: 'room-3',
     type: 'room',
     exits: 4
   },
   {
-    id: 'habitación-4',
+    id: 'room-4',
     type: 'room',
     exits: 4,
     effect: [
@@ -360,32 +360,32 @@ const stack: DungeonCard[] = [
     ]
   },
   {
-    id: 'habitación-5',
+    id: 'room-5',
     type: 'room',
     exits: 4
   },
   {
-    id: 'habitación-6',
+    id: 'room-6',
     type: 'room',
     exits: 3
   },
   {
-    id: 'habitación-7',
+    id: 'room-7',
     type: 'room',
     exits: 3
   },
   {
-    id: 'habitación-8',
+    id: 'room-8',
     type: 'room',
     exits: 3
   },
   {
-    id: 'habitación-9',
+    id: 'room-9',
     type: 'room',
     exits: 1
   },
   {
-    id: 'habitación-10',
+    id: 'room-10',
     type: 'room',
     exits: 1
   }
